@@ -1,0 +1,78 @@
+:root {
+  --er-red: #be1e2d;
+  --er-red-soft: rgba(190, 30, 45, 0.2);
+  --er-ink: #1d2430;
+  --er-muted: #5c6775;
+  --er-bg: #f9fbfd;
+}
+
+.reveal {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--er-ink);
+}
+
+.reveal .slides section {
+  background: var(--er-bg);
+  text-align: left;
+  padding: 1rem 1.8rem;
+}
+
+.ring-corner,
+.ring-side,
+.ring-watermark {
+  position: relative;
+  overflow: hidden;
+}
+
+.ring-corner::before,
+.ring-corner::after,
+.ring-side::before,
+.ring-side::after,
+.ring-watermark::before,
+.ring-watermark::after {
+  content: "";
+  position: absolute;
+  border: 12px solid var(--er-red-soft);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.ring-corner::before { width: 420px; height: 420px; right: -160px; top: -160px; }
+.ring-corner::after  { width: 300px; height: 300px; right: -100px; top: -100px; }
+.ring-side::before { width: 440px; height: 440px; left: -260px; top: 20%; }
+.ring-side::after { width: 300px; height: 300px; left: -180px; top: 26%; }
+.ring-watermark::before { width: 680px; height: 680px; right: -260px; bottom: -320px; opacity: 0.45; }
+.ring-watermark::after { display: none; }
+
+.subtitle { color: var(--er-muted); font-size: 1.1rem; }
+
+.split { display: grid !important; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: center; }
+
+.raised-panel {
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18), 0 14px 34px rgba(0,0,0,.12);
+}
+.panel-light { background: rgba(255,255,255,.88); }
+.panel-dark { background: rgba(26, 30, 37, 0.9); color: #fff; }
+.right-anchored { width: 42%; margin-left: auto; }
+
+.flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-top: 1rem; }
+.flow-card {
+  background: #fff;
+  border-left: 6px solid var(--er-red);
+  padding: .8rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(17,24,39,.08);
+}
+
+.diagram-slot {
+  margin-top: 1rem;
+  border: 2px dashed #98a6b8;
+  border-radius: 12px;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  color: #66768a;
+  background: rgba(255,255,255,.65);
+}
